@@ -1,58 +1,96 @@
-<!-- updated-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>Elegant Digital Menu</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Qorder Generator</h1>
-        <h6>made by haxerpai</h6>
-        <input type="text" id="qr-text" placeholder="Enter text or URL">
-        
-        <div class="color-picker">
-            <label for="foreground-color">Foreground Color:</label>
-            <input type="color" id="foreground-color" value="#000000">
-            
-            <label for="background-color">Background Color:</label>
-            <input type="color" id="background-color" value="#ffffff">
+    <nav class="navbar">
+        <!-- <h1>Our Restaurant</h1> -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        
-        <button onclick="generateQRCode()">Generate QR Code</button>
-        <button onclick="downloadQRCode()" id="download-btn" disabled>Download QR Code</button>
-        
-        <div id="qr-code"></div>
-    </div>
+        <ul class="nav-links">
+            <li><a href="#appetizers">Appetizers</a></li>
+            <li><a href="#main-courses">Main Courses</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-content">
+            <h1>Gourmet Delights</h1>
+            <p>Experience the finest flavors crafted with passion.</p>
+        </div>
+    </header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="script.js"></script>
+    <main>
+        <section class="menu-category">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Bruschetta" alt="Bruschetta">
+                <div class="item-details">
+                    <h3>Bruschetta</h3>
+                    <p>Tomato, basil, mozzarella, and balsamic glaze on toasted bread.</p>
+                    <span class="price">$8.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Caesar+Salad" alt="Caesar Salad">
+                <div class="item-details">
+                    <h3>Caesar Salad</h3>
+                    <p>Romaine lettuce, croutons, parmesan cheese, and Caesar dressing.</p>
+                    <span class="price">$7.99</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Grilled+Salmon" alt="Grilled Salmon">
+                <div class="item-details">
+                    <h3>Grilled Salmon</h3>
+                    <p>Fresh salmon fillet grilled to perfection, served with steamed vegetables.</p>
+                    <span class="price">$18.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Spaghetti+Carbonara" alt="Spaghetti Carbonara">
+                <div class="item-details">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Spaghetti with creamy sauce, pancetta, and parmesan cheese.</p>
+                    <span class="price">$14.99</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Tiramisu" alt="Tiramisu">
+                <div class="item-details">
+                    <h3>Tiramisu</h3>
+                    <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
+                    <span class="price">$6.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Chocolate+Lava+Cake" alt="Chocolate Lava Cake">
+                <div class="item-details">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>Warm chocolate cake with a gooey molten center, served with vanilla ice cream.</p>
+                    <span class="price">$7.99</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gourmet Delights. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-
-<!-- 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>QR Code Generator</h1>
-        <input type="text" id="qr-text" placeholder="Enter text or URL">
-        <button onclick="generateQRCode()">Generate QR Code</button>
-        <div id="qr-code"></div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
-
--->

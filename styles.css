@@ -1,60 +1,222 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Georgia', serif;
     margin: 0;
-    background-color: #f0f0f0;
+    padding: 0;
+    background-color: #f8f5f2; /* Light beige background */
+    color: #4a4a4a; /* Dark gray text */
 }
 
-.container {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.color-picker {
-    margin-bottom: 20px;
-}
-
-.color-picker label {
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1200x400.png?text=Gourmet+Delights');
+    background-size: cover;
+    background-position: center;
     color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #0056b3;
+header h1 {
+    font-size: 48px;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+header p {
+    font-size: 20px;
+    margin: 10px 0 0;
+    font-style: italic;
 }
 
-#qr-code {
-    margin-top: 20px;
+main {
+    padding: 20px;
 }
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h2 {
+    font-size: 32px;
+    color: #333;
+    border-bottom: 2px solid #e0a96d; /* Gold accent */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.menu-item {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.item-details {
+    padding: 20px;
+    flex: 1;
+}
+
+.menu-item h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+}
+
+.menu-item p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.menu-item .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e0a96d; /* Gold accent */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    .menu-item {
+        flex-direction: column;
+    }
+
+    .menu-item img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .menu-category h2 {
+        font-size: 24px;
+    }
+
+    .menu-item h3 {
+        font-size: 20px;
+    }
+
+    .menu-item p {
+        font-size: 14px;
+    }
+
+    .menu-item .price {
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Hamburger Menu Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            margin: 0;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            height: 3px;
+            width: 25px;
+            background-color: #fff;
+            margin: 4px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
