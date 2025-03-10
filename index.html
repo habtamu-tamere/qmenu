@@ -3,86 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Digital Menu</title>
+    <title>Digital Menu</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <!-- <h1>Our Restaurant</h1> -->
-        <div class="menu-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#appetizers">Appetizers</a></li>
-            <li><a href="#main-courses">Main Courses</a></li>
-            <li><a href="#desserts">Desserts</a></li>
-        </ul>
-    </nav>
     <header>
-        <div class="header-content">
-            <h1>Gourmet Delights</h1>
-            <p>Experience the finest flavors crafted with passion.</p>
+        <h1>Welcome to Our Restaurant</h1>
+        <div class="language-switcher">
+            <button id="englishBtn">English</button>
+            <button id="amharicBtn">አማርኛ</button>
         </div>
     </header>
 
     <main>
+        <!-- Appetizers -->
         <section class="menu-category">
-            <h2>Appetizers</h2>
+            <h2 data-english="Appetizers" data-amharic="አፕስታይዝር">Appetizers</h2>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Bruschetta" alt="Bruschetta">
+                <img src="img/bruschetta.jpg" alt="Bruschetta">
                 <div class="item-details">
-                    <h3>Bruschetta</h3>
-                    <p>Tomato, basil, mozzarella, and balsamic glaze on toasted bread.</p>
+                    <h3 data-english="Bruschetta" data-amharic="ብሩስኬታ">Bruschetta</h3>
+                    <p data-english="Tomato, basil, mozzarella, and balsamic glaze on toasted bread."
+                       data-amharic="ቲማቲም, ባዝል, ሞዛሬላ, እና ባልሳሚክ ግሌዝ በተጠበሰ ቦታ ላይ።">
+                        Tomato, basil, mozzarella, and balsamic glaze on toasted bread.
+                    </p>
                     <span class="price">$8.99</span>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Caesar+Salad" alt="Caesar Salad">
+                <img src="caesar-salad.jpg" alt="Caesar Salad">
                 <div class="item-details">
-                    <h3>Caesar Salad</h3>
-                    <p>Romaine lettuce, croutons, parmesan cheese, and Caesar dressing.</p>
+                    <h3 data-english="Caesar Salad" data-amharic="ሴዛር ሰላጣ">Caesar Salad</h3>
+                    <p data-english="Romaine lettuce, croutons, parmesan cheese, and Caesar dressing."
+                       data-amharic="ሮማይን ሰላጣ, ክሩቶንስ, ፓርሜሳን ቺዝ, እና ሴዛር �ጣና።">
+                        Romaine lettuce, croutons, parmesan cheese, and Caesar dressing.
+                    </p>
                     <span class="price">$7.99</span>
                 </div>
             </div>
         </section>
 
+        <!-- Main Courses -->
         <section class="menu-category">
-            <h2>Main Courses</h2>
+            <h2 data-english="Main Courses" data-amharic="ዋና ምግቦች">Main Courses</h2>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Grilled+Salmon" alt="Grilled Salmon">
+                <img src="grilled-salmon.jpg" alt="Grilled Salmon">
                 <div class="item-details">
-                    <h3>Grilled Salmon</h3>
-                    <p>Fresh salmon fillet grilled to perfection, served with steamed vegetables.</p>
+                    <h3 data-english="Grilled Salmon" data-amharic="የተጠበሰ ሳምን">Grilled Salmon</h3>
+                    <p data-english="Fresh salmon fillet grilled to perfection, served with steamed vegetables."
+                       data-amharic="በሙሉ የተጠበሰ በሙሉ �ይን ፊልት, ከተጠበሰ አትክልት ጋር።">
+                        Fresh salmon fillet grilled to perfection, served with steamed vegetables.
+                    </p>
                     <span class="price">$18.99</span>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Spaghetti+Carbonara" alt="Spaghetti Carbonara">
+                <img src="spaghetti-carbonara.jpg" alt="Spaghetti Carbonara">
                 <div class="item-details">
-                    <h3>Spaghetti Carbonara</h3>
-                    <p>Spaghetti with creamy sauce, pancetta, and parmesan cheese.</p>
+                    <h3 data-english="Spaghetti Carbonara" data-amharic="ስፓጌቲ ካርቦናራ">Spaghetti Carbonara</h3>
+                    <p data-english="Spaghetti with creamy sauce, pancetta, and parmesan cheese."
+                       data-amharic="ስፓጌቲ ከክሬም ስስ, ፓንሴታ, እና ፓርሜሳን ቺዝ ጋር።">
+                        Spaghetti with creamy sauce, pancetta, and parmesan cheese.
+                    </p>
                     <span class="price">$14.99</span>
                 </div>
             </div>
         </section>
 
+        <!-- Desserts -->
         <section class="menu-category">
-            <h2>Desserts</h2>
+            <h2 data-english="Desserts" data-amharic="የምንጭ ምግቦች">Desserts</h2>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Tiramisu" alt="Tiramisu">
+                <img src="tiramisu.jpg" alt="Tiramisu">
                 <div class="item-details">
-                    <h3>Tiramisu</h3>
-                    <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
+                    <h3 data-english="Tiramisu" data-amharic="ቲራሚሱ">Tiramisu</h3>
+                    <p data-english="Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream."
+                       data-amharic="ክላሲክ ኢጣሊያኛ ምንጭ ከካፌ የተለወሰ ሴት እግር እና ማስካርፖን ክሬም ጋር።">
+                        Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.
+                    </p>
                     <span class="price">$6.99</span>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Chocolate+Lava+Cake" alt="Chocolate Lava Cake">
+                <img src="chocolate-lava-cake.jpg" alt="Chocolate Lava Cake">
                 <div class="item-details">
-                    <h3>Chocolate Lava Cake</h3>
-                    <p>Warm chocolate cake with a gooey molten center, served with vanilla ice cream.</p>
+                    <h3 data-english="Chocolate Lava Cake" data-amharic="ቾኮሌት ላቫ ኬክ">Chocolate Lava Cake</h3>
+                    <p data-english="Warm chocolate cake with a gooey molten center, served with vanilla ice cream."
+                       data-amharic="ሞቅ ባለ ቾኮሌት ኬክ ከሞልተን ማዕከል ጋር, ቫኒላ አይስክሪም ይሰጣል።">
+                        Warm chocolate cake with a gooey molten center, served with vanilla ice cream.
+                    </p>
                     <span class="price">$7.99</span>
                 </div>
             </div>
@@ -90,7 +99,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Gourmet Delights. All rights reserved.</p>
+        <p>&copy; 2025 Our Restaurant. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

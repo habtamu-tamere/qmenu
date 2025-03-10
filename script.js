@@ -11,8 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Language Switcher
+document.getElementById('englishBtn').addEventListener('click', () => switchLanguage('english'));
+document.getElementById('amharicBtn').addEventListener('click', () => switchLanguage('amharic'));
 
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
+function switchLanguage(lang) {
+    const elements = document.querySelectorAll('[data-english], [data-amharic]');
+    elements.forEach(element => {
+        if (lang === 'english') {
+            element.textContent = element.getAttribute('data-english');
+        } else if (lang === 'amharic') {
+            element.textContent = element.getAttribute('data-amharic');
+        }
+    });
 }
