@@ -4,102 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-</head>
+   </head>
 <body>
-    <header>
-        <h1>Welcome to Our Restaurant</h1>
-        <div class="language-switcher">
-            <button id="englishBtn">English</button>
-            <button id="amharicBtn">አማርኛ</button>
+    <div class="language-switcher">
+        <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="changeLanguage('am')">አማ</button>
+        <button class="lang-btn" onclick="changeLanguage('zh')">中文</button>
+    </div>
+    <!-- Add cart icon to header -->
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
         </div>
+    <header>
+        <h1>Our Menu</h1>
     </header>
 
-    <main>
-        <!-- Appetizers -->
-        <section class="menu-category">
-            <h2 data-english="Appetizers" data-amharic="አፕስታይዝር">Appetizers</h2>
-            <div class="menu-item">
-                <img src="img/bruschetta.jpg" alt="Bruschetta">
-                <div class="item-details">
-                    <h3 data-english="Bruschetta" data-amharic="ብሩስኬታ">Bruschetta</h3>
-                    <p data-english="Tomato, basil, mozzarella, and balsamic glaze on toasted bread."
-                       data-amharic="ቲማቲም, ባዝል, ሞዛሬላ, እና ባልሳሚክ ግሌዝ በተጠበሰ ቦታ ላይ።">
-                        Tomato, basil, mozzarella, and balsamic glaze on toasted bread.
-                    </p>
-                    <span class="price">$8.99</span>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="caesar-salad.jpg" alt="Caesar Salad">
-                <div class="item-details">
-                    <h3 data-english="Caesar Salad" data-amharic="ሴዛር ሰላጣ">Caesar Salad</h3>
-                    <p data-english="Romaine lettuce, croutons, parmesan cheese, and Caesar dressing."
-                       data-amharic="ሮማይን ሰላጣ, ክሩቶንስ, ፓርሜሳን ቺዝ, እና ሴዛር �ጣና።">
-                        Romaine lettuce, croutons, parmesan cheese, and Caesar dressing.
-                    </p>
-                    <span class="price">$7.99</span>
-                </div>
-            </div>
-        </section>
+    <div class="container">
+        <div class="categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="starters">Starters</button>
+            <button class="category-btn" data-category="mains">Main Dishes</button>
+            <button class="category-btn" data-category="desserts">Desserts</button>
+            <button class="category-btn" data-category="drinks">Drinks</button>
+        </div>
 
-        <!-- Main Courses -->
-        <section class="menu-category">
-            <h2 data-english="Main Courses" data-amharic="ዋና ምግቦች">Main Courses</h2>
-            <div class="menu-item">
-                <img src="grilled-salmon.jpg" alt="Grilled Salmon">
-                <div class="item-details">
-                    <h3 data-english="Grilled Salmon" data-amharic="የተጠበሰ ሳምን">Grilled Salmon</h3>
-                    <p data-english="Fresh salmon fillet grilled to perfection, served with steamed vegetables."
-                       data-amharic="በሙሉ የተጠበሰ በሙሉ �ይን ፊልት, ከተጠበሰ አትክልት ጋር።">
-                        Fresh salmon fillet grilled to perfection, served with steamed vegetables.
-                    </p>
-                    <span class="price">$18.99</span>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="spaghetti-carbonara.jpg" alt="Spaghetti Carbonara">
-                <div class="item-details">
-                    <h3 data-english="Spaghetti Carbonara" data-amharic="ስፓጌቲ ካርቦናራ">Spaghetti Carbonara</h3>
-                    <p data-english="Spaghetti with creamy sauce, pancetta, and parmesan cheese."
-                       data-amharic="ስፓጌቲ ከክሬም ስስ, ፓንሴታ, እና ፓርሜሳን ቺዝ ጋር።">
-                        Spaghetti with creamy sauce, pancetta, and parmesan cheese.
-                    </p>
-                    <span class="price">$14.99</span>
-                </div>
-            </div>
-        </section>
+        <div class="menu-grid" id="menu-container">
+            <!-- Menu items will be dynamically inserted here -->
+        </div>
+    </div>
 
-        <!-- Desserts -->
-        <section class="menu-category">
-            <h2 data-english="Desserts" data-amharic="የምንጭ ምግቦች">Desserts</h2>
-            <div class="menu-item">
-                <img src="tiramisu.jpg" alt="Tiramisu">
-                <div class="item-details">
-                    <h3 data-english="Tiramisu" data-amharic="ቲራሚሱ">Tiramisu</h3>
-                    <p data-english="Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream."
-                       data-amharic="ክላሲክ ኢጣሊያኛ ምንጭ ከካፌ የተለወሰ ሴት እግር እና ማስካርፖን ክሬም ጋር።">
-                        Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.
-                    </p>
-                    <span class="price">$6.99</span>
-                </div>
+    <!-- Modal -->
+    <div class="modal" id="itemModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <img id="modalImage" class="item-image" src="" alt="">
+            <div class="item-info">
+                <h2 class="item-title" id="modalTitle"></h2>
+                <p class="item-description" id="modalDescription"></p>
+                <p class="item-price" id="modalPrice"></p>
+                <div class="dietary-tags" id="modalTags"></div>
             </div>
-            <div class="menu-item">
-                <img src="chocolate-lava-cake.jpg" alt="Chocolate Lava Cake">
-                <div class="item-details">
-                    <h3 data-english="Chocolate Lava Cake" data-amharic="ቾኮሌት ላቫ ኬክ">Chocolate Lava Cake</h3>
-                    <p data-english="Warm chocolate cake with a gooey molten center, served with vanilla ice cream."
-                       data-amharic="ሞቅ ባለ ቾኮሌት ኬክ ከሞልተን ማዕከል ጋር, ቫኒላ አይስክሪም ይሰጣል።">
-                        Warm chocolate cake with a gooey molten center, served with vanilla ice cream.
-                    </p>
-                    <span class="price">$7.99</span>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
+
+    <!-- Add Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <div class="cart-total">
+            Total: $<span id="cartTotal">0.00</span>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Our Restaurant. All rights reserved.</p>
+        <p>&copy; 2025 Gourmet Delights. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
